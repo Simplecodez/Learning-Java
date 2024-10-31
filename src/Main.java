@@ -1,6 +1,4 @@
-import Collections.CollectionDemo;
-import generics.*;
-import lambdas.LambdaDemo;
+
 import lambdas.builtins.BuiltInLambda;
 
 public class Main {
