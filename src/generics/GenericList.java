@@ -1,11 +1,13 @@
 package generics;
 
+import practice.functionalInterface.Consumer;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
 
 public class GenericList<T> implements Iterable<T>{
-    private T[] list = (T[]) new Object[2];
+    private T[] list = (T[]) new Object[3];
     private int count;
 
     public void add(T item){
@@ -20,6 +22,12 @@ public class GenericList<T> implements Iterable<T>{
     public Iterator<T> iterator() {
         var r = new ListIterator(this);
         return new ListIterator(this);
+    }
+
+    public void forEach(Consumer<T> action) {
+        for (T item: this){
+            action.accept(item);
+        }
     }
 
     @Override
